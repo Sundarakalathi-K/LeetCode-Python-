@@ -1,0 +1,47 @@
+Longest Palindromic Substring
+Category	Difficulty	Likes	Dislikes
+algorithms	Medium (31.67%)	15883	935
+Tags
+string | dynamic-programming
+
+Companies
+Given a string s, return the longest palindromic substring in s.
+
+ 
+
+Example 1:
+
+Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.
+Example 2:
+
+Input: s = "cbbd"
+Output: "bb"
+ 
+
+Constraints:
+
+1 <= s.length <= 1000
+s consist of only digits and English letters.
+Discussion | Solution
+
+
+solution:
+
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        
+        res=""
+        for i in range(len(s)):
+            curr=self.expand_around_middle(s,i-1,i+1)
+            in_between=self.expand_around_middle(s,i,i+1)
+            res=max(res,curr,in_between,key=len)
+        return res
+            
+    def expand_around_middle(self,s,left,right):
+        while left>=0 and right<len(s) and s[left]==s[right]:
+            left-=1
+            right+=1
+        return s[left+1:right]
+        
