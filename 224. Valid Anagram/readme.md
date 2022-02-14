@@ -1,7 +1,7 @@
-Valid Anagram
-Category	Difficulty	Likes	Dislikes
-algorithms	Easy (60.94%)	4179	199
-Tags
+# Valid Anagram <br>
+Category	| Difficulty|	Likes	| Dislikes <br><br>
+algorithms |	Easy (60.94%)	| 4179	| 199 <br><br>
+Tags :
 Companies
 amazon | uber | yelp
 
@@ -33,6 +33,7 @@ Solution:
 
 
 class Solution:
+
     def isAnagram(self, s: str, t: str) -> bool:
 
         if len(s) != len(t):
@@ -54,5 +55,4 @@ class Solution:
         return True
     
         
-# @lc code=end
 
