@@ -41,8 +41,7 @@ class Solution:
 
         for words in strs:
             key="".join(sorted(words))
-            print(key)
-
+            
             if key in grouping_words:
                 grouping_words[key].append(words)
             else:
